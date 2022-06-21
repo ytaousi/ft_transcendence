@@ -1,0 +1,3 @@
+1- start sperating front end application from back end logic
+2- create volumes for data persistance
+3- create networks to separate services networks for a production lever deployment

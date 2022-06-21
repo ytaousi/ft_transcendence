@@ -1,4 +1,4 @@
 1- start sperating front end application from back end logic
-2- create volumes for data persistance
+2- create volumes for data persistance. done i think
 3- create networks to separate services networks for a production lever deployment
 4- use .env file to inject environement variables. done i think

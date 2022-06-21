@@ -6,34 +6,28 @@ services:
             context: .
         depends_on: 
             - postgres
-        # environment: 
-        #     DATABASE_URL: postgres://user:password@postgres:5432/db
-        #     NODE_ENV: development
-        #     PORT: 3000
         env_file:
             - ./.env
         ports:
             - "8080:3000"
-
     postgres:
         image: postgres:10.4
         ports:
             - "35000:5432"
-        # environment: 
-        #     POSTGRES_USER: user
-        #     POSTGRES_PASSWORD: password
-        #     POSTGRES_DB: db
         env_file:
             - ./.env
+        volumes:
+            - database:/var/lib/postgresql/data
     pgadmin4:
         image: dpage/pgadmin4
         ports:
             - "8081:80"
-        # environment:
-        #     PGADMIN_DEFAULT_EMAIL: admin@admin.com 
-        #     PGADMIN_DEFAULT_PASSWORD: admin
         env_file:
             - ./.env
+        volumes:
+            - pgadmin:/var/lib/pgadmin
+volumes:
+    database:
+    pgadmin:
 
 # should include netwoks properly to separate service's
-# should include volumes properly to persist data

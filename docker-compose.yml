@@ -10,6 +10,8 @@ services:
     #         - ./.env
     #     ports:
     #         - "8080:3000"
+    #     volumes:
+    #         - backend:pathOfBackEndSources
     # frontend-react:
     #     build:
     #         dockerfile: Dockerfile
@@ -20,6 +22,8 @@ services:
     #         - ./.env
     #     ports:
     #         - "8081:5000"
+    #     volumes:
+    #         - frontend:pathOfFrontEndSources
     api:
         build:
             dockerfile: Dockerfile

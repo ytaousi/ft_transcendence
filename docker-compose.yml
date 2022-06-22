@@ -1,39 +1,29 @@
 version: "3.8"
 services:
-    # backend-api:
-    #     build:
-    #         dockerfile: Dockerfile
-    #         context: ./backend-api/
-    #     depends_on:
-    #         - postgres
-    #     env_file:
-    #         - ./.env
-    #     ports:
-    #         - "8080:3000"
-    #     volumes:
-    #         - backend:pathOfBackEndSources
-    # frontend-react:
-    #     build:
-    #         dockerfile: Dockerfile
-    #         context: ./frontend-react/
-    #     depends_on:
-    #         - backend-api
-    #     env_file:
-    #         - ./.env
-    #     ports:
-    #         - "8081:5000"
-    #     volumes:
-    #         - frontend:pathOfFrontEndSources
-    api:
+    backend-api:
         build:
             dockerfile: Dockerfile
-            context: .
-        depends_on: 
+            context: ./backend-api
+        depends_on:
             - postgres
         env_file:
             - ./.env
         ports:
             - "8080:3000"
+        volumes:
+            - backend:/var/src/app
+    frontend-react:
+        build:
+            dockerfile: Dockerfile
+            context: ./frontend-react/
+        depends_on:
+            - backend-api
+        env_file:
+            - ./.env
+        ports:
+            - "8081:3000"
+        volumes:
+            - frontend:/var/src/app/src
     postgres:
         image: postgres:10.4
         ports:
@@ -45,18 +35,19 @@ services:
     pgadmin4:
         image: dpage/pgadmin4
         ports:
-            - "8081:80"
+            - "8082:80"
         env_file:
             - ./.env
         volumes:
             - pgadmin:/var/lib/pgadmin
         depends_on:
             - postgres
+
 volumes:
     database:
     pgadmin:
-    # backend:
-    # frontend:
+    backend:
+    frontend:
 
 # should include netwoks properly to separate service's
 # should separate front-end from back-end then i can adapt networks 

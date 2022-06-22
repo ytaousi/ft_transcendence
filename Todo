@@ -1,4 +1,13 @@
-1- start sperating front end application from back end logic
-2- create volumes for data persistance. done i think
+1- start sperating front end application from back end logic. done i think
+2- create volumes for data persistance. done i think 
 3- create networks to separate services networks for a production lever deployment
 4- use .env file to inject environement variables. done i think
+5- connect database to backend. done i think
+
+5- begin application developpement :  sba7 aykoune dmagh safi w t7ane
+
+backend components:
+1-
+
+frontend components:
+1-

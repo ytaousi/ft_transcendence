@@ -1,5 +1,25 @@
 version: "3.8"
 services:
+    # backend-api:
+    #     build:
+    #         dockerfile: Dockerfile
+    #         context: ./backend-api
+    #     depends_on:
+    #         - postgres
+    #     env_file:
+    #         - ./.env
+    #     ports:
+    #         - "8080:3000"
+    # frontend-react:
+    #     build:
+    #         dockerfile: Dockerfile
+    #         context: ./frontend-react/
+    #     depends_on:
+    #         - backend-api
+    #     env_file:
+    #         - ./.env
+    #     ports:
+    #         - "8081:5000"
     api:
         build:
             dockerfile: Dockerfile

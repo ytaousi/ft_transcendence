@@ -55,6 +55,8 @@ services:
 volumes:
     database:
     pgadmin:
+    # backend:
+    # frontend:
 
 # should include netwoks properly to separate service's
 # should separate front-end from back-end then i can adapt networks 

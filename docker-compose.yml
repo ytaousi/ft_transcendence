@@ -1,17 +1,14 @@
 version: "3.8"
 services:
-    backend-api:
-        build:
-            dockerfile: Dockerfile
-            context: ./backend-api
-        depends_on:
-            - postgres
+    postgres:
+        image: postgres:10.4
+        ports:
+            - "35000:5432"
         env_file:
             - ./.env
-        ports:
-            - "8080:3000"
         volumes:
-            - backend:/var/src/app
+            - database:/var/lib/postgresql/data
+        restart: always
     frontend-react:
         build:
             dockerfile: Dockerfile
@@ -24,15 +21,16 @@ services:
             - "8081:3000"
         volumes:
             - frontend:/var/src/app/src
-    postgres:
-        image: postgres:10.4
-        ports:
-            - "35000:5432"
+    backend-api:
+        build:
+            dockerfile: Dockerfile
+            context: ./backend-api
         env_file:
             - ./.env
+        ports:
+            - "8080:3000"
         volumes:
-            - database:/var/lib/postgresql/data
-        restart: always
+            - backend:/var/src/app
     pgadmin4:
         image: dpage/pgadmin4
         ports:

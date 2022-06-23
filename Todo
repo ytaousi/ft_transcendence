@@ -7,7 +7,17 @@
 5- begin application developpement :  sba7 aykoune dmagh safi w t7ane
 
 backend components:
-1-
+1- nest data validationPipe mechanism using useGlobalPipes(new ValidationPipe)
+    - this will be triggered whenever data sent to our webApp doesnt match the rules of types we will set.
+    - we will be using some specific decorators to fix those rules.
+
+2- CrossOriginResourceSharing (CORS) is a mechanism that allows resources to be requested from another domain.
+    - this will allow our front endpoints to communicate with our backend logic and rules.
+    - read about the properties to set in the Docs.
+
+3-
+
+
 
 frontend components:
 1-

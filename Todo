@@ -15,8 +15,9 @@ backend components:
     - this will allow our front endpoints to communicate with our backend logic and rules.
     - read about the properties to set in the Docs.
 
-3- this about the design pattern of your web applications and define the modules to build (nest ideologie)
-    - user / chat / game maybe 
+3- this about the design pattern of your web applications and define the modules to generate (nest ideologie)
+    - user / chat / game maybe
+    - generate those components using cli before looking for lazy extensions you need to understand basics.
 
 
 frontend components:

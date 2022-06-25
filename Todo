@@ -19,6 +19,5 @@ backend components:
     - user / chat / game maybe
     - generate those components using cli before looking for lazy extensions you need to understand basics.
 
-
 frontend components:
 1-

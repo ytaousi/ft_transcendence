@@ -21,6 +21,18 @@ services:
             - "8081:3000"
         volumes:
             - frontend:/var/src/app/src
+    # frontend-angular:
+    #     build:
+    #         dockerfile: Dockerfile
+    #         context: ./frontend-angular/
+    #     depends_on:
+    #         - backend-api
+    #     env_file:
+    #         - ./.env
+    #     ports:
+    #       - "4200:4200"
+    #     volumes:
+    #         - frontend:/var/src/app/src
     backend-api:
         build:
             dockerfile: Dockerfile

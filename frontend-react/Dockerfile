@@ -1,5 +1,7 @@
 FROM node:12
 
+EXPOSE 3000
+
 WORKDIR /var/src/app
 
 # Install app dependencies
